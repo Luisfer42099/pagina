@@ -1,0 +1,15 @@
+# Archivo apache que permite reescribir las url y mantener el modulo rewrite activado
+<IfModule mod_rewrite.c>
+# Activo el rewrite
+
+RewriteEngine on
+ErrorDocumento 404 http://ingenieria-web-colombia.com/error/
+
+# No se permitira re escribir ni archivos ni directorios solo URLs
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# Esta sera la regla de re escritura lleva la variable 1 a .* y la 2 a .* 
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+
+</IfModule>
