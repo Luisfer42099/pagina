@@ -8,10 +8,10 @@ class errorController{
     
     public function error_form($aerrores, $campo){
         $alerta = '';
-        if(isset($aerrores($campo) && !empty($campo))){
+        if(isset($aerrores[$campo]) && !empty($campo)){
             $alerta = "<div class='alerta alerta_error'.$aerrores[$campo].</div>";
         }
-            
+        
         return $alerta;
     }
 }
