@@ -1,5 +1,5 @@
 <h1>Registrarse</h1>
-<?php //require_once 'controllers/errorController.php'; 
+<?php require_once 'controllers/errorController.php'; 
     //$error = errorController->error_form();
 ?>
 

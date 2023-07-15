@@ -50,7 +50,9 @@ class usuarioController{
             if(empty($password)){
                 $aErrores['password'] = "Debe especificar el password";
             }
-            var_dump(aErrores);
+            
+            var_dump($aErrores);
+            
             //Comprobar si algun campo queda en false 
             if($nombre && $apellido && $email && $password && count($aErrores) == 0){
                 // Se crea el objeto y se le pasa las variables a cada setter
@@ -65,15 +67,15 @@ class usuarioController{
                     $_SESSION['register'] = 'complete';
                 }else{
                     $_SESSION['register'] = 'failed';
-                    $_SESSION['errores'] = $aErrores;
+                    //$_SESSION['errores'] = $aErrores;
                 }
             }else{
                 $_SESSION['register'] = 'failed';
-                $_SESSION['errores'] = $aErrores;
+                //$_SESSION['errores'] = $aErrores;
             }
         }else{
             $_SESSION['register'] = 'failed';
-            $_SESSION['errores'] = $aErrores;
+            //$_SESSION['errores'] = $aErrores;
         }
         header("location:".base_url.'usuario/registro');
     }
